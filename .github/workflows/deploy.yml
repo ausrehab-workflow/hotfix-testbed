@@ -13,6 +13,10 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug release tag
+        run: |
+          echo "Tag: ${{ github.event.release.tag_name }}"
+
       - name: check out codebase
         uses: actions/checkout@v4
         with:
