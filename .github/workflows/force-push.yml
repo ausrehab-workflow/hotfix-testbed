@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   auto-format:
-    if: github.actor != 'ausrehab[bot]'
+    if: github.actor != 'ausrehab-bot[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-github-app-token@v2
