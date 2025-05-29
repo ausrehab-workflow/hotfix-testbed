@@ -13,8 +13,13 @@ jobs:
         id: app-token
         with:
           # required
-          app-id: '1337663'
+          app-id: "1337663"
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Get GitHub App User ID
         id: get-user-id
