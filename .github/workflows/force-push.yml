@@ -25,8 +25,6 @@ jobs:
           git config --global user.name 'ausrehab[bot]'
           git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
 
-      # git commands like commit work using the bot user
       - run: |
-          git add .
-          git commit -m "Auto-generated changes"
-          git push
+          npm version patch -m "chore: bump version to %s"
+          git push origin main --follow-tags
